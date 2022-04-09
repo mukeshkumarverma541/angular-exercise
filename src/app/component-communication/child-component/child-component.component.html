@@ -1,0 +1,9 @@
+<div class="row text-center my-5">
+    <div class="col">
+        <div class="alert alert-warning" role="alert">
+            <h4 *ngIf="!productSelected">Please select any Product !</h4>
+            <h4 *ngIf="productSelected">{{product}} is selected</h4>
+            <button type="button" class="btn btn-success my-4" (click)="addToCart()">Add to Cart</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <h3 class="text-center mb-4">Manage User</h3>
+                <form #userForm="ngForm" (ngSubmit)="onAddUser(userForm)">
+                    <div class="form-group">
+                        <label>User name</label>
+                        <input type="text" class="form-control" name="username" ngModel>
+                    </div>
+                    <div class="form-group">
+                        <label>Technology Use</label>
+                        <input type="text" class="form-control" name="technology" ngModel required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success" [disabled]="!userForm.valid">{{editMode ? 'Update User' : 'Add User'}}</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-8">
+                <h3 class="text-center mb-4">Users</h3>
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>User Id</th>
+                            <th>Usermame</th>
+                            <th>Technology Use</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of users; index as i">
+                            <td>{{user.userId }}</td>
+                            <td>{{user.username}}</td>
+                            <td>{{user.technology}}</td>
+                            <td>
+                                <button class="btn btn-primary" (click)="editProduct(user, i)">Edit</button>
+                                <button class="btn btn-danger" (click)="deleteProduct(user.userId)">Delete</button>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,17 @@
+<select class="form-control" (change)="selectProduct($event)">
+    <option>Select Product</option>
+    <option value="Laptop">Laptop</option>
+    <option value="Desktop">Desktop</option>
+    <option value="Television">Television</option>
+    <option value="PC">PC</option>
+    <option value="Light">Light</option>
+</select>
+
+<div class="mt-5" [ngSwitch]="product">
+    <h2 *ngSwitchCase="'Laptop'">Laptop</h2>
+    <h2 *ngSwitchCase="'Desktop'">Desktop</h2>
+    <h2 *ngSwitchCase="'Television'">Television</h2>
+    <h2 *ngSwitchCase="'PC'">PC</h2>
+    <h2 *ngSwitchCase="'Light'">Light</h2>
+    <h2 *ngSwitchDefault="">Please select Product</h2>
+</div>

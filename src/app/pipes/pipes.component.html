@@ -1,0 +1,37 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <!-- <h2 class="text-center">{{value | uxpipe : 10}}</h2>
+                <ul>
+                    <li *ngFor="let name of nameArr">{{name | uxpipe: 5}}</li>
+                </ul> -->
+
+
+                <div class="form-group mb-5">
+                    <input type="text" class="form-control" placeholder="Search Product..." [(ngModel)]="nameSearch">
+                </div>
+                <table class="table">
+                    <thead>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of products | filter : nameSearch">
+                            <td><img src="{{product.image}}" class="img-fluid" style="width: 50px;"></td>
+                            <td>{{product.title}}</td>
+                            <td>{{product.category }}</td>
+                            <td>{{product.price}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+
+
+        </div>
+    </div>
+</section>

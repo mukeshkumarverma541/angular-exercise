@@ -1,0 +1,9 @@
+<button type="button" class="btn btn-primary" [class.btn-danger]="activeClass">Class Binding</button>
+<button type="button" class="btn btn-secondary" [style.margin]="'20px'">Style Binding</button>
+<button type="button" class="btn btn-secondary" [style.color]="color">Style Binding</button>
+<div>
+    <button type="button" class="btn" [ngClass]="isActive ? 'btn-success' : 'btn-secondary'">Button Conditional </button>
+</div>
+<div class="mt-5">
+    <button type="button " class="btn" [ngClass]="salesVolume >= 50000 ? 'btn-success' : 'btn-danger'">Sales Volumne</button>
+</div>

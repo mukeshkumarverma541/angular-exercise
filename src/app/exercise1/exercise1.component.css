@@ -1,0 +1,15 @@
+.admin {
+    background-color: #000;
+    border-color: #000;
+    font-size: 20px;
+}
+
+.user {
+    background-color: #ff4159;
+    border-color: #ff4159;
+    font-size: 20px;
+}
+
+.list-group-item button {
+    float: right;
+}

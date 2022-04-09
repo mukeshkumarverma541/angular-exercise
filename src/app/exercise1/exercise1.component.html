@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col">
+        <ul class="list-group">
+            <li class="list-group-item active admin">Admin</li>
+            <li class="list-group-item" *ngFor="let admin of admins; index as i">{{admin.name}}
+                <button type="button" class="btn btn-danger remove-btn" (click)="removeAdmin(i)">Remove</button>
+            </li>
+        </ul>
+    </div>
+    <div class="col">
+        <ul class="list-group">
+            <li class="list-group-item active user">User</li>
+            <li class="list-group-item" *ngFor="let user of users; index as i">{{user.name}}
+                <button type="button" class="btn btn-danger remove-btn" (click)="removeUser(i)">Remove</button>
+            </li>
+        </ul>
+    </div>
+</div>
+<hr class="my-5">
+<div class="row gx-5">
+    <div class="col">
+        <app-ex-child [boxType]="'admin'" [title]="'Admin'" (inputEvent)="pushAdmin($event)" [placeholderText]="'Create admin'"></app-ex-child>
+    </div>
+    <div class="col">
+        <app-ex-child [boxType]="'user'" [title]="'User'" (inputEvent)="pushUser($event)" [placeholderText]="'Create user'"></app-ex-child>
+    </div>
+</div>

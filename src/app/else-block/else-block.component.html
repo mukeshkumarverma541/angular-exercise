@@ -1,0 +1,11 @@
+<button type="button" class="btn btn-success" (click)="onCreateBlock()">Button</button>
+
+<div *ngIf="isValid; else elseBlock">
+    <h3 class="mt-4">If Block</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit adipisci corrupti nulla voluptas omnis quae suscipit hic, molestiae, iste quos delectus unde est quo voluptatibus dolor tempora praesentium nam. Iusto.</p>
+</div>
+
+<ng-template #elseBlock>
+    <h3 class="mt-4">Else Block</h3>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quo labore iure exercitationem dignissimos, qui ab? Facere nostrum natus vitae, quos beatae expedita. Tempore illo cupiditate aliquam quibusdam molestias aspernatur?</p>
+</ng-template>

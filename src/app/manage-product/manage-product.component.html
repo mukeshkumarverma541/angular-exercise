@@ -1,0 +1,55 @@
+<section>
+    <div class="container">
+        <div class="row gx-5">
+            <div class="col">
+                <h3 class="mb-5 text-center">Manage Product</h3>
+                <form>
+                    <div class="form-group">
+                        <label>Product Id</label>
+                        <input type="text" class="form-control" name="id" #id>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Name</label>
+                        <input type="text" class="form-control" name="name" #name>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Price</label>
+                        <input type="text" class="form-control" name="price" #price>
+                    </div>
+                    <div class="mt-5">
+                        <button type="submit" class="btn btn-success" (click)="addProduct(id, name, price)">{{editMode ? 'Update Product': 'Add Product'}}</button>
+                        <button type="submit" class="btn btn-primary" (click)="onSaveProduct()">Save Product</button>
+                        <button type="button" class="btn btn-secondary" (click)="fetchProduct()">Fetch Product</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col">
+                <h3 class="mb-5 text-center">{{ dataTitle | async}} </h3>
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="!isLoading">
+                        <tr *ngFor="let product of products; index as i">
+                            <td>{{product.id}}</td>
+                            <td>{{product.name}}</td>
+                            <td>{{product.price}}</td>
+                            <td>
+                                <a class="btn btn-primary btn-sm me-3" (click)="editProduct(i)">Edit</a>
+                                <a class="btn btn-danger btn-sm" (click)="deleteProduct(i)">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="spinner-border text-danger mx-auto d-block" role="status" *ngIf="isLoading">
+                    <span class="sr-only"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

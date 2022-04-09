@@ -1,0 +1,8 @@
+<div class="card mb-3" [ngClass]="{adminBox: boxType =='admin', userBox: boxType =='user'}">
+    <div class="card-header">{{title}}</div>
+    <div class="card-body text-dark">
+        <input type="text" class="form-control" #inputVal placeholder="{{placeholderText}}">
+        <button type="submit" class="btn btn-primary mt-4" (click)="onCreate(inputVal)">Create {{title}}</button>
+        <div class="stats mt-4">Total {{title}} = <strong>{{count}}</strong></div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="row" *ngIf="cartProductName">
+    <div class="col">
+        <div class="alert alert-success" role="alert">
+            <strong class="text-danger">{{cartProductName}}</strong> is selected and added in the cart !
+            <div class="text-right"><button type="button" class="btn btn-primary" style="float: right; margin-top: -30px;">View Checkout</button></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-3">
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2014/07/30/22/56/workstation-405768_960_720.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Desktop</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a (click)="onSelectProduct('Desktop')" class="btn btn-primary">select Product</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2020/10/21/18/07/laptop-5673901_960_720.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Laptop</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a (click)="onSelectProduct('Laptop')" class="btn btn-primary">select Product</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2021/11/16/15/35/technology-6801334_960_720.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Tablet</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a (click)="onSelectProduct('Tablet')" class="btn btn-primary">select Product</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2018/10/26/11/14/tv-3774381_960_720.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Television</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a (click)="onSelectProduct('Television')" class="btn btn-primary">select Product</a>
+            </div>
+        </div>
+    </div>
+</div>
+<app-child-component [productSelected]="itemSelected" [product]="item" (cartProduct)="cartProduct($event)">
+</app-child-component>

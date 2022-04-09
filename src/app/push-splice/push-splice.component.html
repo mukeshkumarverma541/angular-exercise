@@ -1,0 +1,13 @@
+<div>
+    <input #uname type="text" class="form-control" placeholder="Enter User Name" value="">
+    <button type="submit" class="btn btn-success mt-3 mb-5 me-4" (click)="createUser(uname)">Create User</button>
+    <button type="button" class="btn btn-danger mt-3 mb-5 me-3" (click)="removeUser()">Delete User</button>
+    <button type="button" class="btn btn-secondary mt-3 mb-5" (click)="removeAll()">Delete All</button>
+</div>
+
+<ul class="list-group">
+    <li class="list-group-item" aria-current="true" *ngFor="let user of  users; index as i">
+        {{ user.name}}
+        <button type="button" class="btn btn-info" style="float: right;" (click)="deleteUser(i)">Delete</button>
+    </li>
+</ul>
